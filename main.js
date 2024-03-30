@@ -2,6 +2,7 @@ import { getData } from "./modules/http";
 import { CreateHeader } from "/modules/ui";
 CreateHeader()
 const options = document.querySelectorAll('.options p')
+const title_of_this_movie = document.querySelector('#title_of_this_movie')
 let prev = 0
 options.forEach((opt, idx) => {
     opt.onclick = () => {
@@ -10,7 +11,40 @@ options.forEach((opt, idx) => {
         prev = idx
     }
 })
-const movies = document.querySelector('.movies')
+  const iframe = document.querySelector('iframe')
+  console.log(iframe);
+function reload_2(arr, place) {
+  place.innerHTML = ''
+
+  for (const iterator of arr) {
+       const video = document.createElement('div')
+       const img_of_video = document.createElement('img')
+       const img = document.createElement('img')
+       const name_of_it = document.createElement('h3')
+       video.className = 'video'
+       img_of_video.className = 'img_of_video'
+       img.className = 'play'
+       name_of_it.className = 'name_of_it'
+       img.src = '/public/svg/play.svg'
+       img_of_video.src = `https://image.tmdb.org/t/p/original${iterator.backdrop_path}`
+       name_of_it.innerHTML = `${iterator.title}`
+       video.append(img_of_video, name_of_it, img)
+       video.id = `${iterator.id}`
+       place.append(video)
+       video.onclick = () => {
+
+         fetch(`https://api.themoviedb.org/3/movie/${video.id}/videos`, get)
+         .then(res => res.json())
+         .then(res => {
+           const trailer = res.results.find(item => item.type === 'Trailer')
+           console.log(trailer);
+           iframe.src = `https://www.youtube.com/embed/${trailer.key}`
+           title_of_this_movie.innerHTML = `${iterator.title}`
+         })
+       }
+    }
+}
+const line_of_traylers = document.querySelector('.line_of_traylers')
 const photos_of_movies = document.querySelector('.photos_of_movies')
   function reload(arr, place) {
     place.innerHTML = ''
@@ -41,8 +75,9 @@ const photos_of_movies = document.querySelector('.photos_of_movies')
         place.append(movie)
     }
   }
+
   const btn = document.querySelector('.all_new_ones')
-const get = {
+    const get = {
     method: 'GET',
     headers: {
       accept: 'application/json',
@@ -66,18 +101,8 @@ const get = {
             }
         }
         console.log(response);
+        reload_2(response.results, line_of_traylers)
+        
     })
-    const get_2 = {
-        method: 'GET',
-        headers: {
-          accept: 'application/json',
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlODAzYWUxZGEwOGU3M2RmM2ZjMTI2OGMzNTE2NWNjMiIsInN1YiI6IjY0MjdlZWY4OGE4OGIyMDBkNTMyOGQ1MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.8WByVMOVhx2M7eo1SLPb3cPkt2NSfzLg53Afm1_dr-M'
-        }
-      };
-      
-      fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', get_2)
-        .then(response => response.json())
-        .then(response =>{
-            
-            console.log(response)
-        })
+
+   

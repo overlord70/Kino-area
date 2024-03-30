@@ -191,3 +191,78 @@ button{
     background: #191E2E;
     border: 2px solid white;
 }
+.new_traylers_place{
+   .start{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1{
+        font-family: Nunito;
+        font-size: 65px;
+        font-weight: 900;
+        line-height: 82.81px;
+        text-align: left;
+        color: white;
+    }
+    p{
+        font-family: Nunito;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 27.26px;
+        text-align: left;
+        color: white;
+        cursor: pointer;
+    }
+   }
+}
+.flex{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        h2{
+            color: white;
+            font-family: Nunito;
+            font-size: 40px;
+            font-weight: 900;
+            line-height: 57.33px;
+            text-align: left;
+        }
+    }
+    .right{
+        img{
+            cursor: pointer;
+        }
+    }
+}
+.line_of_traylers{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow-x: scroll;
+}
+.video{
+    position: relative;
+    .img_of_video{
+       max-width: 450px;
+       border-radius: 10px;
+    }
+    .play{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+    }
+    h3{
+        color: white;
+        font-family: Nunito;
+        font-size: 20px;
+        font-weight: 900;
+        line-height: 25.48px;
+        text-align: left;
+    }
+}

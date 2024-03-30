@@ -1,0 +1,193 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+body{
+    background: #191E2E;
+}
+button{
+    border: 0;
+    cursor: pointer;
+}
+.wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+#header{
+    margin: 10px auto;
+    width: 1200px;
+    height: 56px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 5px;
+        .logo{
+            display: flex;
+            align-items: center;
+            h1{
+                font-family: Nunito;
+                font-size: 25px;
+                font-weight: 800;
+                line-height: 31.37px;
+                text-align: left;
+                color: blue;
+                #area{
+                    color: white;
+                }
+            }
+        }
+    }
+    .main{
+        display: flex;
+        gap: 20px;
+        font-family: Nunito;
+        font-size: 17px;
+        font-weight: 700;
+        line-height: 21.06px;
+        a{
+            color: white;
+            font-family: Nunito;
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 21.06px;
+            text-align: left;
+            text-decoration: none;
+        }
+    }
+    .right{
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     #first_one{
+        width: 55px;
+        height: 52px;
+        border-radius: 10px;
+        background-color: white;
+     }
+     #second_one{
+        width: 138px;
+        height: 53px;
+        border-radius: 10px;
+        background: #3657CB;
+        box-shadow: 0px 0px 15px 0px #4871FFCC;
+        color: white;
+        font-family: Nunito;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 26.64px;
+     }
+    }
+}
+.selector{
+    margin-block: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    h1{
+        font-family: Nunito;
+        font-size: 65px;
+        font-weight: 900;
+        line-height: 82.81px;
+        text-align: left;
+    }
+    .line{
+        width: 70px;
+        height: 2px;
+        background-color: white;
+    }
+    .options{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        p{
+            cursor: pointer;
+            opacity: 0.2;
+            font-family: Nunito;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 22.3px;
+            text-align: left;
+        }
+    }
+}
+#active_option{
+    opacity: 1;
+}
+ ::-webkit-scrollbar{
+    display: none;
+ }
+.photos_of_movies{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    .movie{
+        margin-block: 10px;
+        .title{
+            margin-top: -50px;
+            font-family: Nunito;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 22.3px;
+            text-align: left;
+            color: white;
+        }
+        .type{
+            font-family: Qanelas;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 17.85px;
+            text-align: left;
+            color: #F2F60F;
+            
+        }
+        .relative{
+            position: relative;
+            .img_bg{
+                width: 290px;
+                height: 500px;
+                border-radius: 10px 10px 10px 10px;
+            }
+            .score_of_movie{
+                padding-top: 5px;
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                width: 62.28px;
+                height: 33.21px;
+                border-radius: 5px;
+                background: #89CB36;
+                #num{
+                    font-family: Nunito;
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 22.3px;
+                    text-align: center;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+.all_new_ones{
+    margin: 50px 500px;
+    width: 200px;
+    height: 71px;
+    border-radius: 10px;
+    font-family: Nunito;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 29.97px;
+    text-align: center;
+    color: white;
+    background: #191E2E;
+    border: 2px solid white;
+}

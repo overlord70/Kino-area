@@ -1,23 +1,23 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-img{
+img {
     max-width: 100%;
 }
-body{
+body {
     background: #191E2E;
 }
-button{
+button {
     border: 0;
     cursor: pointer;
 }
-.wrap{
+.wrap {
     width: 1200px;
     margin: 0 auto;
 }
-#header{
+#header {
     margin: 20px auto;
     width: 1200px;
     height: 56px;
@@ -25,35 +25,35 @@ button{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .left{
+    .left {
         display: flex;
         flex-direction: column;
         align-items: center;
         row-gap: 5px;
-        .logo{
+        .logo {
             display: flex;
             align-items: center;
-            h1{
+            h1 {
                 font-family: Nunito;
                 font-size: 25px;
                 font-weight: 800;
                 line-height: 31.37px;
                 text-align: left;
                 color: blue;
-                #area{
+                #area {
                     color: white;
                 }
             }
         }
     }
-    .main{
+    .main {
         display: flex;
         gap: 20px;
         font-family: Nunito;
         font-size: 17px;
         font-weight: 700;
         line-height: 21.06px;
-        a{
+        a {
             color: white;
             font-family: Nunito;
             font-size: 17px;
@@ -63,53 +63,55 @@ button{
             text-decoration: none;
         }
     }
-    .right{
-     display: flex;
-     align-items: center;
-     gap: 10px;
-     #first_one{
-        width: 55px;
-        height: 52px;
-        border-radius: 10px;
-        background-color: white;
-     }
-     #second_one{
-        width: 138px;
-        height: 53px;
-        border-radius: 10px;
-        background: #3657CB;
-        box-shadow: 0px 0px 15px 0px #4871FFCC;
-        color: white;
-        font-family: Nunito;
-        font-size: 16px;
-        font-weight: 700;
-        line-height: 26.64px;
-     }
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        #first_one {
+            width: 55px;
+            height: 52px;
+            border-radius: 10px;
+            background-color: white;
+        }
+        #second_one {
+            width: 138px;
+            height: 53px;
+            border-radius: 10px;
+            background: #3657CB;
+            box-shadow: 0 0 15px 0 #4871FFCC;
+            color: white;
+            font-family: Nunito;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 26.64px;
+        }
     }
 }
-.selector{
+.selector {
     margin-block: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
-    h1{
+    h1 {
         font-family: Nunito;
         font-size: 65px;
         font-weight: 900;
         line-height: 82.81px;
         text-align: left;
     }
-    .line{
+    .line {
         width: 70px;
         height: 2px;
         background-color: white;
     }
-    .options{
+    .options {
+        width: 470px;
         display: flex;
         align-items: center;
         gap: 20px;
-        p{
+        overflow-x: scroll;
+        p {
             cursor: pointer;
             opacity: 0.2;
             font-family: Nunito;
@@ -120,18 +122,18 @@ button{
         }
     }
 }
-#active_option{
+.active_option {
     opacity: 1;
 }
- ::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
- }
-.photos_of_movies{
+}
+.photos_of_movies {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    .movie{
+    .movie {
         margin-block: 10px;
-        .title{
+        .title {
             margin-top: -50px;
             font-family: Nunito;
             font-size: 18px;
@@ -140,26 +142,26 @@ button{
             text-align: left;
             color: white;
         }
-        .type{
+        .type {
             font-family: Qanelas;
             font-size: 15px;
             font-weight: 400;
             line-height: 17.85px;
             text-align: left;
             color: #F2F60F;
-            
+
         }
-        .relative{
+        .relative {
             position: relative;
-            .img_bg{
+            .img_bg {
                 width: 290px;
                 height: 500px;
                 border-radius: 10px;
-                ::after{
+                ::after {
                     color: white;
                 }
             }
-            .score_of_movie{
+            .score_of_movie {
                 padding-top: 5px;
                 position: absolute;
                 top: 10px;
@@ -168,7 +170,7 @@ button{
                 height: 33.21px;
                 border-radius: 5px;
                 background: #89CB36;
-                #num{
+                #num {
                     font-family: Nunito;
                     font-size: 18px;
                     font-weight: 700;
@@ -180,7 +182,7 @@ button{
         }
     }
 }
-.all_new_ones{
+.all_new_ones {
     margin: 50px 500px;
     width: 200px;
     height: 71px;
@@ -194,40 +196,40 @@ button{
     background: #191E2E;
     border: 2px solid white;
 }
-.new_traylers_place{
-   .start{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    h1{
-        font-family: Nunito;
-        font-size: 65px;
-        font-weight: 900;
-        line-height: 82.81px;
-        text-align: left;
-        color: white;
+.new_traylers_place {
+    .start {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+            font-family: Nunito;
+            font-size: 65px;
+            font-weight: 900;
+            line-height: 82.81px;
+            text-align: left;
+            color: white;
+        }
+        p {
+            font-family: Nunito;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 27.26px;
+            text-align: left;
+            color: white;
+            cursor: pointer;
+        }
     }
-    p{
-        font-family: Nunito;
-        font-size: 22px;
-        font-weight: 700;
-        line-height: 27.26px;
-        text-align: left;
-        color: white;
-        cursor: pointer;
-    }
-   }
 }
-.flex{
+.flex {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .left{
+    .left {
         display: flex;
         align-items: center;
         gap: 20px;
-        h2{
+        h2 {
             color: white;
             font-family: Nunito;
             font-size: 40px;
@@ -236,31 +238,31 @@ button{
             text-align: left;
         }
     }
-    .right{
-        img{
+    .right {
+        img {
             cursor: pointer;
         }
     }
 }
-.line_of_traylers{
+.line_of_traylers {
     display: flex;
     align-items: center;
     gap: 20px;
     overflow-x: scroll;
 }
-.video{
+.video {
     position: relative;
-    .img_of_video{
-       max-width: 450px;
-       border-radius: 10px;
+    .img_of_video {
+        max-width: 450px;
+        border-radius: 10px;
     }
-    .play{
+    .play {
         position: absolute;
         top: 50%;
         left: 50%;
         translate: -50% -50%;
     }
-    h3{
+    h3 {
         color: white;
         font-family: Nunito;
         font-size: 20px;
@@ -269,7 +271,7 @@ button{
         text-align: left;
     }
 }
-.bg_of_entered_movie{
+.bg_of_entered_movie {
     transition: 0.5s ease-in-out;
     opacity: 0.2;
     position: absolute;
@@ -281,6 +283,88 @@ button{
     height: 100%;
     margin: 0 auto;
 }
-.active::after{
-    color: rgba(54, 87, 203, 0.65);
+.popular_movies {
+    margin-top: 50px;
+    h1 {
+        font-family: Nunito;
+        font-size: 40px;
+        font-weight: 900;
+        line-height: 50.96px;
+        text-align: left;
+        color: white;
+    }
+    .line_of_time {
+        overflow-x: scroll;
+        margin-block: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 470px;
+        font-family: Nunito;
+        p {
+            opacity: 0.2;
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 18.58px;
+            text-align: left;
+        }
+    }
+}
+.movies_of_this_time{
+    padding-inline: 10px;
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    .movie {
+        margin-block: 10px;
+        .title {
+            margin-top: -50px;
+            font-family: Nunito;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 22.3px;
+            text-align: left;
+            color: white;
+        }
+        .type {
+            font-family: Qanelas;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 17.85px;
+            text-align: left;
+            color: #F2F60F;
+
+        }
+        .relative {
+            position: relative;
+            .img_bg {
+                width: 290px;
+                height: 500px;
+                border-radius: 10px;
+                ::after {
+                    color: white;
+                }
+            }
+            .score_of_movie {
+                padding-top: 5px;
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                width: 62.28px;
+                height: 33.21px;
+                border-radius: 5px;
+                background: #89CB36;
+                #num {
+                    font-family: Nunito;
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 22.3px;
+                    text-align: center;
+                    color: white;
+                }
+            }
+        }
+    }
 }

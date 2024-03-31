@@ -4,7 +4,12 @@ const baseURL = import.meta.env.VITE_BASE_URL
 
 export const getData = async(path) => {
     try{
-        const res = await axios.get(baseURL + path)
+        const res = await axios.get(path, {
+            headers: {
+                accept: 'application/json',
+                Authorization: import.meta.env.VITE_API_KEY
+            }
+        })
         if(res.status === 200 || res.status === 201) {
             return res.data
         } 

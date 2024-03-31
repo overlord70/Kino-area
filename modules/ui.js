@@ -1,32 +1,5 @@
+import { getData } from "./http"
 export function CreateHeader() {
-//     <header id="header">
-//     <div class="left">
-//       <div class="logo">
-//         <img src="/public/img/XMLID 1219.png" alt="">
-//         <h1>
-//           Kino<span id="area">area</span>
-//         </h1>
-//       </div>
-//       <img src="/public/img/   .png" alt="">
-//     </div>
-//     <nav class="main">
-//       <a href="#">Афиша</a>
-//       <a href="#">Медиа</a>
-//       <a href="#">Фильмы</a>
-//       <a href="#">Актёры</a>
-//       <a href="#">Новости</a>
-//       <a href="#">Подборки</a>
-//       <a href="#">Категории</a>
-//     </nav>
-//     <div class="right">
-//       <button id="first_one">
-//         <img src="/public/img/Vector.png" alt="">
-//       </button>
-//       <button id="second_one">
-//         Войти
-//       </button>
-//     </div>
-//    </header>
     const header = document.createElement('header')
     const left = document.createElement('div')
     const logo = document.createElement('div')
@@ -83,3 +56,72 @@ export function CreateHeader() {
     header.append(left, main, right)
     document.body.prepend(header)
 }
+
+export function reload(arr, place, place_bg) {
+    place.innerHTML = ''
+    for (const item of arr) {
+        const movie = document.createElement('div')
+        const relative = document.createElement('div')
+        const img_bg = document.createElement('div')
+        const score_of_movie = document.createElement('div')
+        const num = document.createElement('p')
+        const title = document.createElement('h2')
+        const type = document.createElement('p')
+        movie.className= 'movie'
+        relative.classList.add('relative')
+        img_bg.className = 'img_bg'
+        img_bg.style.background = `url(https://image.tmdb.org/t/p/original${item.poster_path})`
+        img_bg.style.backgroundSize = 'contain'
+        img_bg.style.backgroundRepeat = 'no-repeat'
+        score_of_movie.className = 'score_of_movie'
+        num.id = 'num'
+        num.innerHTML = item.vote_average
+        title.className = 'title'
+        title.innerHTML = item.title
+        type.className = 'type'
+        type.innerHTML = item.original_language
+        score_of_movie.append(num)
+        relative.append(img_bg, score_of_movie)
+        movie.append(relative, title, type)
+        place.append(movie)
+            img_bg.onclick = () => {
+                img_bg.classList.add('active')
+                setTimeout(() => {
+                    localStorage.setItem('url', `${item.backdrop_path}`)
+                    place_bg.style.background = `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`
+                    place_bg.style.backgroundRepeat = "no-repeat"
+                    place_bg.style.backgroundSize = "contain"
+                }, 0)
+            }
+    }
+  }
+
+  export function reload_2(arr, place, second_place, iframe) {
+    place.innerHTML = ''
+  
+    for (const iterator of arr) {
+         const video = document.createElement('div')
+         const img_of_video = document.createElement('img')
+         const img = document.createElement('img')
+         const name_of_it = document.createElement('h3')
+         video.className = 'video'
+         img_of_video.className = 'img_of_video'
+         img.className = 'play'
+         name_of_it.className = 'name_of_it'
+         img.src = '/public/svg/play.svg'
+         img_of_video.src = `https://image.tmdb.org/t/p/original${iterator.backdrop_path}`
+         name_of_it.innerHTML = `${iterator.title}`
+         video.append(img_of_video, name_of_it, img)
+         video.id = `${iterator.id}`
+         place.append(video)
+         video.onclick = () => {
+  
+           getData(`https://api.themoviedb.org/3/movie/${video.id}/videos`)
+           .then(res => {
+             const trailer = res.results.find(item => item.type === 'Trailer')
+             iframe.src = `https://www.youtube.com/embed/${trailer.key}`
+             second_place.innerHTML = `${iterator.title}`
+           })
+         }
+      }
+  }

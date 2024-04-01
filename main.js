@@ -1,6 +1,6 @@
 import {getData, getData_2} from "./modules/http";
-import { reload_3 } from "./modules/ui";
-import {CreateHeader, reload, reload_2} from "/modules/ui";
+import { reload_3, reload_name } from "./modules/ui";
+import {CreateHeader, reload, reload_2, reload_4} from "/modules/ui";
 import axios from "axios";
 CreateHeader()
 
@@ -95,3 +95,10 @@ for (const iterator of years) {
   })
   }
 }
+const photos = document.querySelector('.photos')
+getData_2('https://api.themoviedb.org/3/person/popular')
+    .then(({results}) => {
+        console.log(results);
+        reload_4(results, photos)
+        reload_name(results, document.querySelector('.table_of_names'))
+    })

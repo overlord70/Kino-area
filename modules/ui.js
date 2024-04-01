@@ -80,7 +80,8 @@ export function reload(arr, place, place_bg) {
         img_bg.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.poster_path})`
         img_bg.style.backgroundSize = 'contain'
         img_bg.style.backgroundRepeat = 'no-repeat'
-        img_bg.id = item.backdrop_path
+        img_bg.id = item.id
+        img_bg.name = item.backdrop_path
         score_of_movie.className = 'score_of_movie'
         num.id = 'num'
         num.innerHTML = item.vote_average
@@ -103,14 +104,20 @@ export function reload(arr, place, place_bg) {
                     imgs[prev].classList.remove('add_class')
                     img.classList.add('add_class')
                     prev = idx
-                    img.firstElementChild.classList.add('btn_active')
+                   setInterval(() => {
+                    if(img.className.includes('add_class') === true){
+                        img.firstElementChild.style.display = 'block'
+                    } else {
+                        img.firstElementChild.style.display = 'none'
+                    }
+                   }, 0);
+                   img.firstElementChild.onclick = () => {
+                    localStorage.setItem('recent_movie', img.id)
+                    location.assign('/pages/chosen_movie/')
+                   }
                     setTimeout(() => {
-                        img.firstElementChild.classList.remove('btn_active')
-                        img.classList.remove('add_class')
-                    }, 7000);
-                    setTimeout(() => {
-                        localStorage.setItem('url', `${img.id}`)
-                        place_bg.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${img.id})`
+                        localStorage.setItem('url', `${img.name}`)
+                        place_bg.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${img.name})`
                         place_bg.style.backgroundRepeat = "no-repeat"
                         place_bg.style.backgroundSize = "contain"
                     }, 0)
@@ -230,5 +237,19 @@ export function reload_name(arr, place) {
     left.append(h2, h3)
     name.append(left, right)
     place.append(name, line)
+    }
+}
+export function reload_5(arr, place) {
+    place.innerHTML = ''
+    console.log('hi');
+    for (const item of arr) {
+        place += `
+        <div class="actor">
+                    <img src="https://image.tmdb.org/t/p/original${item.profile_path}" alt="">
+                    <h2>${item.name}</h2>
+                    <h3>${item.original_name}</h3>
+                    <p>${item.character}</p>
+                </div>
+        `
     }
 }

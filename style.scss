@@ -281,19 +281,10 @@ button {
     position: absolute;
     z-index: -2;
     width: 1440px;
-    height: 850px;
+    height: 810px;
 }
 
-// .bg_of_entered_movie::after {
-//     content: '';
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//     width: 10%;
-//     height: 50%;
-//     background-color: #191E2E;
-//     opacity: 0; /* цветовой оверлей с прозрачностью 0.5 */
-//   }
+
 .popular_movies {
     margin-top: 50px;
     h1 {
@@ -318,7 +309,6 @@ button {
             font-size: 15px;
             font-weight: 700;
             line-height: 18.58px;
-            text-align: left;
         }
     }
 }
@@ -514,4 +504,8 @@ button {
             }
         }
     }
+}
+.active_p{
+    color: white;
+    opacity: 0;
 }

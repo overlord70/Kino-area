@@ -1,0 +1,179 @@
+.bg_of_entered_movie{
+    opacity: 0.2;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.flex_0{
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    color: white;
+    .poster{
+        width: 500px;
+        height: 500px;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .flex_2{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        p{
+            cursor: pointer;
+            color: #4871FFCC;
+            opacity: 0.6;
+        }
+        .name_of_movie{
+            opacity: 0.9;
+            color: white;
+        }
+    }
+    h1{
+        font-size: 65px;
+        font-weight: 900;
+        line-height: 82.81px;
+        text-align: left;
+        color: white;
+    }
+    h2{
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 30.18px;
+        text-align: left;
+        color: white;
+    }
+    .scores{
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: white;
+        .round_1{
+            width: 55px;
+            padding: 10px 17px;
+            height: 55px;
+            background: rgba(75, 203, 54, 0.3);
+            border-radius: 50%;
+            border: 7px solid  rgba(75, 203, 54, 1);
+            border-left-color: rgba(75, 203, 54, 0.3) ;
+        }
+        .round_2{
+            width: 55px;
+            height: 55px;
+            padding: 10px;
+            background: rgba(137, 203, 54, 0.3);
+            border-radius: 50%;
+            border: 7px solid rgba(137, 203, 54, 1);
+            border-left-color: rgba(137, 203, 54, 0.3) ;
+        }
+        .kinoarea_score, .imdb_score{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+    .description{
+        margin-top: 10px;
+        width: 697px;
+        height: 126px;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 33.3px;
+    }
+    .details{
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+     button{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        justify-content: center;
+        width: 260px;
+        height: 71px;
+        border-radius: 10px;
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 29.97px;
+        border: 2px solid white;
+        background: none;
+    }
+}
+}
+.opinions{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    .left{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        img{
+            cursor: pointer;
+        }
+        .line_of_score{
+            border-radius: 12px;
+            position: relative;
+            width: 185px;
+            height: 59px;
+            border-radius: 5px;
+            background: rgba(27, 33, 51, 1);
+            p{
+                position: absolute;
+                top: 30%;
+                z-index: 0;
+                color: rgba(87, 208, 67, 1);
+            }
+            .fill{
+                border-radius: 7px;
+                width: 70%;
+                height: 100%;
+                transition: 0.5s ease-in;
+                background: rgba(172, 255, 47, 0.582);
+            }
+        }
+    }
+    .right{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        p{
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16.9px;
+        text-align: left;
+        color: white;
+        }
+    }
+}
+.list_of_actors{
+    .actor{
+        width: 100px;
+        height: 100px;
+        h2{
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 22.3px;
+            text-align: left;
+            color: white;
+        }
+        h3{
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 17.85px;
+            opacity: 0.5;
+            text-align: left;
+            color: #4871FFCC;
+        }
+        p{
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 19.04px;
+            text-align: left;
+            color: rgba(242, 246, 15, 1);
+        }
+    }
+}

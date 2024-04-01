@@ -35,6 +35,9 @@ export function CreateHeader() {
     a_4.innerHTML = 'Актёры'
     a_5.innerHTML = 'Новости'
     a_6.innerHTML = 'Подборки'
+    a_6.onclick = () => {
+        location.assign('/pages/liked_movies/')
+    }
     a_7.innerHTML = 'Категории'
     a_1.href = '#'
     a_2.href = '#'
@@ -202,7 +205,7 @@ export function reload_3(arr, place) {
 export function reload_4(arr, place) {
     place.innerHTML = ""
 
-
+    
     for (let item of arr) {
         place.innerHTML += `
         <div class="photo">
@@ -241,9 +244,9 @@ export function reload_name(arr, place) {
 }
 export function reload_5(arr, place) {
     place.innerHTML = ''
-    console.log('hi');
+
     for (const item of arr) {
-        place += `
+        place.innerHTML += `
         <div class="actor">
                     <img src="https://image.tmdb.org/t/p/original${item.profile_path}" alt="">
                     <h2>${item.name}</h2>

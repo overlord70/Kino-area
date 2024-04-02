@@ -106,3 +106,12 @@ getData(`/${recent_movie}/similar?language=ru`)
         `
     }
 })
+setInterval(() => {
+    const actor_photos = document.querySelectorAll('.actor')
+    actor_photos.forEach(img => {
+        img.onclick = () => {
+            localStorage.setItem('recent_actor', img.id)
+            location.assign('/pages/profile_of_actor/')
+        }
+    })
+}, 20);

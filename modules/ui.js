@@ -179,14 +179,14 @@ export function reload_3(arr, place) {
             .classList
             .add('relative')
         img_bg.className = 'img_bg'
-        img_bg.style.background = `url(https://image.tmdb.org/t/p/original${item.poster_path})`
+        img_bg.style.background = `url(https://image.tmdb.org/t/p/original${item.poster_path})` || `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`
         img_bg.style.backgroundSize = 'contain'
         img_bg.style.backgroundRepeat = 'no-repeat'
         score_of_movie.className = 'score_of_movie'
         num.id = 'num'
         num.innerHTML = item.vote_average
         title.className = 'title'
-        title.innerHTML = item.title
+        title.innerHTML = item.title || item.original_name
         type.className = 'type'
         type.innerHTML = item
             .original_language
@@ -247,12 +247,52 @@ export function reload_5(arr, place) {
 
     for (const item of arr) {
         place.innerHTML += `
-        <div class="actor">
-                    <img src="https://image.tmdb.org/t/p/original${item.profile_path}" alt="">
+        <div id="${item.id}" class="actor">
+                    <img  src="https://image.tmdb.org/t/p/original${item.profile_path}" alt="">
                     <h2>${item.name}</h2>
                     <h3>${item.original_name}</h3>
                     <p>${item.character}</p>
                 </div>
         `
+    }
+}
+export function reload_6(arr, place) {
+    place.innerHTML = ''
+    for (const item of arr) {
+        if(item.vote_average > 7){
+            const movie = document.createElement('div')
+            const relative = document.createElement('div')
+            const img_bg = document.createElement('div')
+            const score_of_movie = document.createElement('div')
+            const num = document.createElement('p')
+            const title = document.createElement('h2')
+            const type = document.createElement('p')
+            movie.className = 'movie'
+            relative
+                .classList
+                .add('relative')
+            img_bg.className = 'img_bg'
+            img_bg.style.background = `url(https://image.tmdb.org/t/p/original${item.poster_path})` || `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`
+            img_bg.style.backgroundSize = 'contain'
+            img_bg.style.backgroundRepeat = 'no-repeat'
+            score_of_movie.className = 'score_of_movie'
+            num.id = 'num'
+            num.innerHTML = item.vote_average
+            title.className = 'title'
+            title.innerHTML = item.title || item.original_name
+            type.className = 'type'
+            type.innerHTML = item
+                .original_language
+                score_of_movie
+                .append(num)
+            relative.append(img_bg, score_of_movie)
+            movie.append(relative, title, type)
+            place.append(movie)
+            img_bg.onclick = () => {
+                img_bg
+                    .classList
+                    .add('active')
+            }
+        }
     }
 }

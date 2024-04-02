@@ -1,0 +1,247 @@
+.the_actor{
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    .left{
+        img{
+            border-radius: 12px;
+            width: 400px;
+            height: 550px;
+        }
+    }
+    .right{
+        .flex_2{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            p{
+                cursor: pointer;
+                color: #4871FFCC;
+                opacity: 0.6;
+            }
+            .name_of_movie{
+                opacity: 0.9;
+                color: white;
+            }
+    }
+    h1{
+        color: white;
+        font-size: 65px;
+        font-weight: 900;
+        line-height: 82.81px;
+    }
+    h2{
+        color: white;
+        font-size: 25px;
+        font-weight: 500;
+        line-height: 30.18px;
+    }
+    .flex_09{
+        display: flex;
+        align-items: center;
+        gap: 35px;
+    }
+    .litle_inf{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 200px);
+        row-gap: 15px;
+        p{
+            width: 300px;
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 23.24px;
+        }
+        .movie_db{
+            opacity: 0.5;
+            color: rgba(242, 246, 15, 1);
+            text-decoration: underline rgba(242, 246, 15, 1);
+        }
+    }
+    .flex_0{
+        display: flex;
+        align-items: center;
+        color: white;
+    }
+}
+}
+#one{
+    cursor: pointer;
+}
+.list_of_movies{
+    margin-top: 50px;
+    h1{
+        color: white;
+        font-size: 65px;
+        font-weight: 900;
+        line-height: 82.81px;
+        text-align: left;
+    }
+}
+.selector{
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .movie {
+        margin-block: 10px;
+        .title {
+            margin-top: -50px;
+            font-family: Nunito;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 22.3px;
+            text-align: left;
+            color: white;
+        }
+        .type {
+            font-family: Qanelas;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 17.85px;
+            text-align: left;
+            color: #F2F60F;
+
+        }
+        .relative {
+            position: relative;
+            .img_bg {
+                width: 290px;
+                height: 500px;
+                border-radius: 10px;
+            }
+            .score_of_movie {
+                padding-top: 5px;
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                width: 62.28px;
+                height: 33.21px;
+                border-radius: 5px;
+                background: #89CB36;
+                #num {
+                    font-family: Nunito;
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 22.3px;
+                    text-align: center;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+.photos_of_celebrities{
+    h1{
+        color: white;
+        font-size: 65px;
+        font-weight: 900;
+        line-height: 82.81px;
+        text-align: left;
+    }
+    h2{
+        margin-top: 15px;
+        color: white;
+    }
+}
+.photos_of_this_very_actor{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    overflow-y: scroll;
+    height: 500px;
+}
+.img{
+    border-radius: 12px;
+    width: 500px;
+    height: 500px;
+}
+.all_movies{
+    margin-top: 50px;
+    font-size: 45px;
+    font-weight: 900;
+    line-height: 82.81px;
+    text-align: left;
+    color: white;
+}
+
+.films{
+    .film{
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .left{
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            h2{
+                font-size: 25px;
+                font-weight: 700;
+                line-height: 30.97px;
+                text-align: left;
+
+            }
+            h3{
+                font-size: 17px;
+                font-weight: 500;
+                line-height: 20.52px;
+                text-align: left;
+                color: rgba(84, 104, 158, 1);
+
+            }
+            p{
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 17.85px;
+                text-align: left;
+                color: rgba(242, 246, 15, 1);
+
+            }
+            img{
+                border-radius: 12px;
+                width: 300px;
+                height: 400px;
+            }
+            display: flex;
+            align-items: center;
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            .imdb, .kinoarea{
+                padding-top: 15px;
+                width: 100px;
+                height: 50px;
+                top: 5128px;
+                border-radius: 5px;
+                background: rgba(75, 203, 54, 1);
+                color: white;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 22.3px;
+                text-align: center;
+            }
+            button{
+                width: 224px;
+                height: 71px;
+                border-radius: 10px;
+                background: rgba(54, 87, 203, 1);
+                box-shadow: 0px 0px 10px 0px rgba(55, 94, 232, 0.4);
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 29.97px;
+                color: white;
+            }
+        }
+    }
+    hr{
+        margin-top: 20px;
+        border: 1px solid rgba(59, 72, 107, 1);
+        background-color: rgba(59, 72, 107, 1) ;
+    }
+}

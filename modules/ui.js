@@ -167,54 +167,58 @@ export function reload_2(arr, place, second_place, iframe) {
 export function reload_3(arr, place) {
     place.innerHTML = ''
     for (const item of arr) {
-        const movie = document.createElement('div')
-        const relative = document.createElement('div')
-        const img_bg = document.createElement('div')
-        const score_of_movie = document.createElement('div')
-        const num = document.createElement('p')
-        const title = document.createElement('h2')
-        const type = document.createElement('p')
-        movie.className = 'movie'
-        relative
-            .classList
-            .add('relative')
-        img_bg.className = 'img_bg'
-        img_bg.style.background = `url(https://image.tmdb.org/t/p/original${item.poster_path})` || `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`
-        img_bg.style.backgroundSize = 'contain'
-        img_bg.style.backgroundRepeat = 'no-repeat'
-        score_of_movie.className = 'score_of_movie'
-        num.id = 'num'
-        num.innerHTML = item.vote_average
-        title.className = 'title'
-        title.innerHTML = item.title || item.original_name
-        type.className = 'type'
-        type.innerHTML = item
-            .original_language
-            score_of_movie
-            .append(num)
-        relative.append(img_bg, score_of_movie)
-        movie.append(relative, title, type)
-        place.append(movie)
-        img_bg.onclick = () => {
-            img_bg
+        if(item.poster_path !== null || item.backdrop_path !== null){
+            const movie = document.createElement('div')
+            const relative = document.createElement('div')
+            const img_bg = document.createElement('div')
+            const score_of_movie = document.createElement('div')
+            const num = document.createElement('p')
+            const title = document.createElement('h2')
+            const type = document.createElement('p')
+            movie.className = 'movie'
+            relative
                 .classList
-                .add('active')
+                .add('relative')
+            img_bg.className = 'img_bg'
+            img_bg.style.background = `url(https://image.tmdb.org/t/p/original${item.poster_path})` || `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`
+            img_bg.style.backgroundSize = 'contain'
+            img_bg.style.backgroundRepeat = 'no-repeat'
+            score_of_movie.className = 'score_of_movie'
+            num.id = 'num'
+            num.innerHTML = item.vote_average
+            title.className = 'title'
+            title.innerHTML = item.title || item.original_name
+            type.className = 'type'
+            type.innerHTML = item
+                .original_language
+                score_of_movie
+                .append(num)
+            relative.append(img_bg, score_of_movie)
+            movie.append(relative, title, type)
+            place.append(movie)
+            img_bg.onclick = () => {
+                img_bg
+                    .classList
+                    .add('active')
+            }
         }
     }
 }
 export function reload_4(arr, place) {
     place.innerHTML = ""
-
+ 
     
     for (let item of arr) {
-        place.innerHTML += `
-        <div class="photo">
-        <img src="https://image.tmdb.org/t/p/original${item.profile_path}" alt="">
-        <p>${item.popularity}</p>
-        <h2>${item.name}</h2>
-        <h3>${item.original_name}</h3>
-      </div>
-        `
+        if(item.profile_path !== null){
+            place.innerHTML += `
+            <div class="photo">
+            <img src="https://image.tmdb.org/t/p/original${item.profile_path}" alt="">
+            <p>${item.popularity}</p>
+            <h2>${item.name}</h2>
+            <h3>${item.original_name}</h3>
+          </div>
+            `
+        }
     }
 }
 export function reload_name(arr, place) {

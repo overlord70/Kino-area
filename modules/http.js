@@ -10,6 +10,9 @@ export const getData = async (path) => {
                 Authorization: import.meta.env.VITE_API_KEY
             }
         })
+
+
+        
         if (res.status === 200 || res.status === 201) {
             return res.data
         }

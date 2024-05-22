@@ -11,8 +11,6 @@ export const getData = async (path) => {
             }
         })
 
-
-        
         if (res.status === 200 || res.status === 201) {
             return res.data
         }
